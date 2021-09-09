@@ -1,0 +1,50 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+body{
+    width: 100vw;
+    height: 100vh;
+    background: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+button{
+    display: inline-flex;
+    padding: 20px 50px;
+    text-transform: uppercase;
+    background: rgb(43, 43, 43);
+    border: none;
+    font-weight: bold;
+    color: #fff;
+    letter-spacing: 3px;
+    position: relative;
+    transition: all .2s;
+    overflow: hidden;
+}
+button span{
+    position: relative;
+    z-index: 1;
+}
+
+button::after{
+    content: '';
+    position: absolute;
+    width: 0px;
+    height: 0px;
+    top: var(--y);
+    left: var(--x);
+    transform: translate(-50%,-50%);
+    border-radius: 50%;
+    background: rgb(20, 151, 202);
+    transition: width .5s ,height .5s;
+}
+
+
+button:hover:after{
+    width: 500px;
+    height: 500px;
+}
